@@ -3,21 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customizable Website</title>
+    <title>Comfysthetic</title>
     <style>
-        /* CSS Variables for easy customization */
+        /* Image variables - change these to your image filenames */
         :root {
-            --primary-color: #5C6AC4;
-            --secondary-color: #4A55A2;
-            --text-color: #333;
-            --bg-color: #f5f5f5;
-            --accent-color: #FF6B6B;
-            --font-family: 'Arial', sans-serif;
-            --border-radius: 8px;
-            --box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --big-image: "main/image1.jpeg";
+            --small-image: "main/image2.jpeg";
         }
 
-        /* Base styles */
         * {
             margin: 0;
             padding: 0;
@@ -25,91 +18,172 @@
         }
 
         body {
-            font-family: var(--font-family);
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            line-height: 1.6;
+            font-family: 'Arial', sans-serif;
             padding: 25px;
+            background-color: #f8f9fa;
+            color: #333;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+        .hero-section {
+            position: relative;
+            height: 80vh;
+            margin-bottom: 50px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 20px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            margin-bottom: 30px;
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .title {
-            color: white;
-            font-size: 2.5rem;
-        }
-
-        .content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-        }
-
-        .card h2 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        footer {
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            color: var(--secondary-color);
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 4rem;
+            font-weight: bold;
         }
 
-        /* Responsive design */
+        .content-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .content-image {
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .pre-order-btn {
+            background-color: #5C6AC4;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .pre-order-btn:hover {
+            background-color: #4A55A2;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(92, 106, 196, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(92, 106, 196, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(92, 106, 196, 0);
+            }
+        }
+
+        .contact-section {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #5C6AC4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+            z-index: 1000;
+        }
+
+        .contact-section.visible {
+            transform: translateY(0);
+        }
+
+        .contact-btn {
+            background-color: #FF6B6B;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background-color: #FF5252;
+            transform: scale(1.05);
+        }
+
         @media (max-width: 768px) {
-            .content {
-                grid-template-columns: 1fr;
+            .hero-text {
+                font-size: 2.5rem;
             }
             
-            .title {
-                font-size: 2rem;
+            .content-image {
+                max-width: 250px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1 class="title">My Customizable Website</h1>
-        </header>
+    <!-- Hero Section with Comfysthetic text overlay -->
+    <section class="hero-section">
+        <img src="main/background.jpg" alt="Background" class="hero-image">
+        <div class="hero-text">Comfysthetic</div>
+    </section>
+
+    <!-- Content Section with image and button -->
+    <section class="content-section">
+        <img src="main/content.jpg" alt="Content" class="content-image">
+        <button class="pre-order-btn">Pre-Order Now</button>
+    </section>
+
+    <!-- Contact Section (hidden until scrolled) -->
+    <section class="contact-section" id="contactSection">
+        <p>Would you like to contact us?</p>
+        <button class="contact-btn" onclick="handleContact()">Contact Us</button>
+    </section>
+
+    <script>
+        // Handle scroll to show contact section
+        window.addEventListener('scroll', function() {
+            const contactSection = document.getElementById('contactSection');
+            if (window.scrollY > 300) {
+                contactSection.classList.add('visible');
+            } else {
+                contactSection.classList.remove('visible');
+            }
+        });
+
+        // Handle contact button click
+        function handleContact() {
+            alert("Actually no");
+        }
+
+        // Set image variables (you can change these values)
+        const bigImage = "main/background.jpg";
+        const smallImage = "main/content.jpg";
         
-        <div class="content">
-            <div class="card">
-                <h2>Section 1</h2>
-                <p>This is a customizable website template. You can easily modify colors, fonts, and layout by changing the CSS variables in the :root section.</p>
-            </div>
-            
-            <div class="card">
-                <h2>Section 2</h2>
-                <p>Features include responsive design, CSS variables for easy theming, and a clean structure that's perfect for development.</p>
-            </div>
-        </div>
-        
-        <footer>
-            <p>© 2023 Customizable Website Template</p>
-        </footer>
-    </div>
+        // Update images dynamically
+        document.querySelector('.hero-image').src = bigImage;
+        document.querySelector('.content-image').src = smallImage;
+    </script>
 </body>
 </html>
