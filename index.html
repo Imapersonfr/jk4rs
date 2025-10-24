@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customizable Website</title>
+    <style>
+        /* CSS Variables for easy customization */
+        :root {
+            --primary-color: #5C6AC4;
+            --secondary-color: #4A55A2;
+            --text-color: #333;
+            --bg-color: #f5f5f5;
+            --accent-color: #FF6B6B;
+            --font-family: 'Arial', sans-serif;
+            --border-radius: 8px;
+            --box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            padding: 25px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+        }
+
+        .title {
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .card h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: var(--secondary-color);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            .title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">My Customizable Website</h1>
+        </header>
+        
+        <div class="content">
+            <div class="card">
+                <h2>Section 1</h2>
+                <p>This is a customizable website template. You can easily modify colors, fonts, and layout by changing the CSS variables in the :root section.</p>
+            </div>
+            
+            <div class="card">
+                <h2>Section 2</h2>
+                <p>Features include responsive design, CSS variables for easy theming, and a clean structure that's perfect for development.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2023 Customizable Website Template</p>
+        </footer>
+    </div>
+</body>
+</html>
